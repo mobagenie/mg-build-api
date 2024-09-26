@@ -1,6 +1,12 @@
 const express = require('express');
+const cors = require('cors'); // Import the cors package
 const { google } = require('googleapis');
 const app = express();
+
+// Use CORS middleware
+app.use(cors()); // This will allow all origins
+// You can also customize CORS options, for example:
+// app.use(cors({ origin: 'http://example.com' })); // Allow only example.com
 
 // YouTube Data API client
 const youtube = google.youtube('v3');
